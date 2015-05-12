@@ -1,0 +1,9 @@
+---
+- name: enable options
+  ini_file:  >
+    dest={{ item.ini }}
+    section={{ item.section }}
+    option={{ item.option }}
+    value={{ item.value }}
+    backup=yes
+  with_items: php.options
